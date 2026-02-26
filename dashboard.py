@@ -19,7 +19,7 @@ st.markdown("Uma visão interativa dos acessos, performance e visitantes.")
 def load_data():
     try:
         # Carregando o dataset limpo
-        df = pd.read_csv('accessLog_Limpo.csv')
+        df = pd.read_pickle('log_dw.pkl')
         
         # Convertendo coluna de Data para datetime
         # Removendo fuso horário para simplificar visualização, similar à análise original
@@ -92,11 +92,11 @@ if not df.empty:
     col1, col2, col3, col4 = st.columns(4)
     
     total_req = len(filtered_df)
-    unique_ips = filtered_df['IP'].nunique()
+    unique_ips = filtered_df['Ip'].nunique()
     if not filtered_df.empty:
         error_req = len(filtered_df[filtered_df['Status'] >= 400])
         error_rate = (error_req / total_req) * 100
-        top_url = filtered_df['URL_Limpa'].mode()[0] if not filtered_df['URL_Limpa'].mode().empty else "N/A"
+        top_url = filtered_df['URL'].mode()[0] if not filtered_df['URL'].mode().empty else "N/A"
         # Truncar URL longa para exibição
         top_url_display = (top_url[:30] + '..') if len(top_url) > 30 else top_url
     else:
@@ -149,7 +149,7 @@ if not df.empty:
         
         with col_rec1:
             st.subheader("Top 10 URLs Mais Acessadas")
-            top_urls = filtered_df['URL_Limpa'].value_counts().head(10).reset_index()
+            top_urls = filtered_df['URL'].value_counts().head(10).reset_index()
             top_urls.columns = ['URL', 'Acessos']
             
             fig_urls = px.bar(
@@ -259,8 +259,8 @@ if not df.empty:
                  st.info("Informações de dispositivo não disponíveis.")
 
         st.subheader("Top IPs (Clientes Mais Ativos)")
-        top_ips = filtered_df['IP'].value_counts().head(10).reset_index()
-        top_ips.columns = ['IP', 'Requisições']
+        top_ips = filtered_df['Ip'].value_counts().head(10).reset_index()
+        top_ips.columns = ['Ip', 'Requisições']
         st.table(top_ips)
 
 else:
