@@ -1,18 +1,18 @@
-# 📊 Análise de Logs de Servidor Web
+# Análise de Logs de Servidor Web
 
 Um projeto completo de análise e visualização de logs de servidor web, utilizando técnicas de ETL (Extract, Transform, Load) para processar, enriquecer e analisar dados de acesso a servidores.
 
-## 📋 Descrição do Projeto
+## Descrição do Projeto
 
 Este projeto implementa um pipeline de dados que coleta logs de acesso HTTP bruto, realiza limpeza e enriquecimento dos dados utilizando geolocalização e análise de user-agents, e disponibiliza as informações através de um dashboard interativo com Streamlit.
 
 **Principais funcionalidades:**
-- ✅ Extração e parsing de logs de servidor (HTTP)
-- ✅ Limpeza e validação de dados
-- ✅ Enriquecimento com geolocalização e informações de navegador
-- ✅ Armazenamento em múltiplos formatos (Parquet, SQLite, Pickle)
-- ✅ Dashboard interativo com métricas e visualizações em Plotly
-- ✅ Análise exploratória com Jupyter Notebooks
+- Extração e parsing de logs de servidor (HTTP)
+- Limpeza e validação de dados
+- Enriquecimento com geolocalização e informações de navegador
+- Armazenamento em múltiplos formatos (Parquet, SQLite, Pickle)
+- Dashboard interativo com métricas e visualizações em Plotly
+- Análise exploratória com Jupyter Notebooks
 
 ---
 
@@ -52,24 +52,24 @@ graph LR
 
 ### Etapas do Pipeline:
 
-1. **Extract** 📥
+1. **Extract** 
    - Leitura de logs brutos em formato HTTP
    - Parsing com expressões regulares
    - Validação de campos
 
-2. **Transform** 🔄
+2. **Transform** 
    - Limpeza e normalização de dados
    - Identificação de user-agents (navegadores, bots)
    - Detecção de dispositivos (mobile, tablet, PC)
    - Enriquecimento com geolocalização de IPs
    - Cálculo de status codes e taxa de erros
 
-3. **Load** 💾
+3. **Load** 
    - Armazenamento em Parquet (formato colunar)
    - Persistência em SQLite3 para consultas SQL
    - Exportação em Pickle para análises rápidas
 
-4. **Visualização** 📈
+4. **Visualização** 
    - Dashboard interativo com Streamlit
    - Gráficos interativos com Plotly
    - Filtros por período, IP, URL e status
@@ -177,12 +177,12 @@ streamlit run dashboard.py
 ```
 
 O dashboard oferece:
-- 📊 Visualizações interativas
-- 🔍 Filtros dinâmicos
-- 📈 Gráficos de tendências
-- 🌍 Mapa geográfico
-- 📱 Análise de dispositivos
-- 🤖 Estatísticas de bots
+- Visualizações interativas
+- Filtros dinâmicos
+- Gráficos de tendências
+- Mapa geográfico
+- Análise de dispositivos
+- Estatísticas de bots
 
 ---
 
@@ -241,14 +241,14 @@ Notebook adicional com análises complementares e experimentações.
 
 Com esta análise você pode:
 
-- 🔍 Identificar padrões de acesso ao servidor
-- 🌍 Descobrir origem geográfica do tráfego
-- 🤖 Detectar atividade de bots e crawlers
-- 📱 Entender quais dispositivos mais acessam o site
-- ⏰ Otimizar infraestrutura baseado em horários de pico
-- 🛡️ Identificar tentativas de acesso indevido (4xx/5xx)
-- 💼 Gerar relatórios executivos de tráfego
-- 📊 Comparar performance entre URLs
+- Identificar padrões de acesso ao servidor
+- Descobrir origem geográfica do tráfego
+- Detectar atividade de bots e crawlers
+- Entender quais dispositivos mais acessam o site
+- Otimizar infraestrutura baseado em horários de pico
+- Identificar tentativas de acesso indevido (4xx/5xx)
+- Gerar relatórios executivos de tráfego
+- Comparar performance entre URLs
 
 ---
 
@@ -313,16 +313,16 @@ Este projeto foi desenvolvido como parte de um estágio, com foco em:
 
 ---
 
-## ✨ Status do Projeto
+## Status do Projeto
 
-- ✅ Pipeline ETL completo
-- ✅ Dashboard funcional
-- ✅ Análise exploratória
-- ✅ Documentação
-- 🔄 Possíveis melhorias e expansões
+- Pipeline ETL completo
+- Dashboard funcional
+- Análise exploratória
+- Documentação
+- Possíveis melhorias e expansões
 
 ---
 
-**Desenvolvido com ❤️ durante estágio**
+**Desenvolvido durante estágio**
 
 *Última atualização: Fevereiro de 2026*
